@@ -6,10 +6,9 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <h1>Navbar!!!</h1>
         <Link to='/'><button>Home</button></Link>
         <Link to='/suggestions'><button>Make a Suggestion</button></Link>
-        <button>Offer to help</button>
+        <Link to='/offerhelp'><button>Offer to Help</button></Link>
       </div>
     )
   }

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+
+import Navbar from '../../components/Navbar'; // This can be improved with react router?
 import llamas from './llamas.png';
 
-class Homepage extends Component {
+class Home extends Component {
 
   render() {
     return (
       <div>
+        <Navbar />
         <h1>Emily and Alexei at it at last!</h1>
         <h2>27 June 2019</h2>
         <div>
@@ -21,4 +24,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+export default Home;

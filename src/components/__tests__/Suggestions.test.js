@@ -9,17 +9,10 @@ beforeEach(() => {
   suggestions = shallow(<Suggestions />);
 });
 
-it('has a textarea and button', () => {
-  expect(suggestions.find('textarea').length).toEqual(1);
-  expect(suggestions.find('button').length).toEqual(1);
-});
-
 it('shows a header', () => {
   expect(suggestions.find('h1').length).toEqual(1);
 });
 
-it('has a text area that users can type in', () => {
-  suggestions.find('textarea').simulate('change', {
-    target: { value: 'new comment' }
-  });
+it('has a TextArea component', () => {
+  expect(suggestions.find('TextArea').length).toEqual(1);
 });

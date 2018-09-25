@@ -4,14 +4,14 @@ import Navbar from 'components/Navbar'; // This can be improved with react route
 import TextArea from 'components/TextArea';
 
 class Suggestions extends Component {
-
   render() {
     return (
       <div>
         <Navbar />
         <h1>Add a Suggestion</h1>
         <TextArea
-          reducer='saveSuggestion'
+          reducer='suggestion'
+          btnName='Send Suggestion'
         />
       </div>
     )

@@ -1,18 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SuggestionCollector from '../SuggestionCollector';
+import Suggestions from '../Suggestions';
 
 let suggestions;
 
 beforeEach(() => {
-  suggestions = shallow(<SuggestionCollector />);
+  suggestions = shallow(<Suggestions />);
 });
 
 it('shows a header', () => {
   expect(suggestions.find('h1').length).toEqual(1);
-});
-
-it('has a TextArea component', () => {
-
 });

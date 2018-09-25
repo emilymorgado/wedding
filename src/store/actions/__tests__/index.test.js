@@ -1,10 +1,10 @@
 import {
   saveSuggestion,
-  saveHelpOffer,
+  saveOffer,
 } from 'store/actions';
 import {
   SAVE_SUGGESTION,
-  ADD_HELP,
+  SAVE_OFFER,
 } from 'store/actions/types';
 
 describe('saveSuggestion', () => {
@@ -21,12 +21,12 @@ describe('saveSuggestion', () => {
 
 describe('saveHelpOffer', () => {
   it('has the correct type', () => {
-    const action = saveHelpOffer();
-    expect(action.type).toEqual(ADD_HELP);
+    const action = saveOffer();
+    expect(action.type).toEqual(SAVE_OFFER);
   });
 
   it('has the correct payload', () => {
-    const action = saveHelpOffer('Help Offer');
+    const action = saveOffer('Help Offer');
     expect(action.payload).toEqual('Help Offer');
   });
 });

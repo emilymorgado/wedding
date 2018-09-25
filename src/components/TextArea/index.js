@@ -14,7 +14,11 @@ class TextArea extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    this.props.saveSuggestion(this.state.text)
+    if (this.props.reducer === 'suggestion') {
+      this.props.saveSuggestion(this.state.text)
+    } else if (this.props.reducer === 'offer') {
+      this.props.saveOffer(this.state.text)
+    }
     this.setState({ text: '' });
   };
 
@@ -26,7 +30,7 @@ class TextArea extends Component {
             onChange={this.handleChange}
             value={this.state.text}
           />
-          <button>Submit</button>
+          <button>{this.props.btnName}</button>
         </form>
       </div>
     )

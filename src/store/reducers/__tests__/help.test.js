@@ -1,9 +1,9 @@
 import helpReducer from 'store/reducers/help';
-import { SAVE_HELP_OFFER } from 'store/actions/types';
+import { SAVE_OFFER } from 'store/actions/types';
 
 it('handles actions of type ADD_HELP', () => {
   const action = {
-    type: SAVE_HELP_OFFER,
+    type: SAVE_OFFER,
     payload: 'Help Offer',
   };
 

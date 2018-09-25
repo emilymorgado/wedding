@@ -12,7 +12,8 @@ class Help extends Component {
         <h1>I'm interested in helping!</h1>
         <h2>Let us know what you can help with:</h2>
         <TextArea
-          reducer='ADD_HELP'/>
+          reducer='offer'
+          btnName='Submit Offer'/>
       </div>
     )
   }

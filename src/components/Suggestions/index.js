@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Navbar from '../Navbar'; // This can be improved with react router?
-import TextArea from '../TextArea';
+import Navbar from 'components/Navbar'; // This can be improved with react router?
+import TextArea from 'components/TextArea';
 
 class Suggestions extends Component {
   // state = {

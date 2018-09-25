@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Navbar from '../../components/Navbar'; // This can be improved with react router?
-import llamas from './llamas.png';
+import Navbar from 'components/Navbar'; // This can be improved with react router?
+import llamas from 'components/Home/llamas.png';
 
 class Home extends Component {
 

@@ -1,4 +1,4 @@
-import { ADD_SUGGESTION } from '../actions/types';
+import { ADD_SUGGESTION } from 'store/actions/types';
 
 export default function(state=[], action) {
   switch (action.type) {

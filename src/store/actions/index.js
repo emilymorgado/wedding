@@ -1,4 +1,4 @@
-import { ADD_SUGGESTION } from './types';
+import { ADD_SUGGESTION } from 'store/actions/types';
 
 export function addSuggestion(suggestion) {
   return {

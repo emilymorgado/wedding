@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Suggestions from '../Suggestions';
+import SuggestionCollector from '../SuggestionCollector';
 
 let suggestions;
 
 beforeEach(() => {
-  suggestions = shallow(<Suggestions />);
+  suggestions = shallow(<SuggestionCollector />);
 });
 
 it('shows a header', () => {
@@ -14,5 +14,5 @@ it('shows a header', () => {
 });
 
 it('has a TextArea component', () => {
-  expect(suggestions.find('TextArea').length).toEqual(1);
+
 });

@@ -3,19 +3,19 @@ import React, { Component } from 'react';
 import Navbar from 'components/Navbar'; // This can be improved with react router?
 import TextArea from 'components/TextArea';
 
-class Help extends Component {
+class Suggestions extends Component {
 
   render() {
     return (
       <div>
         <Navbar />
-        <h1>I'm interested in helping!</h1>
-        <h2>Let us know what you can help with:</h2>
+        <h1>Add a Suggestion</h1>
         <TextArea
-          reducer='ADD_HELP'/>
+          reducer='saveSuggestion'
+        />
       </div>
     )
   }
 }
 
-export default Help;
+export default Suggestions;

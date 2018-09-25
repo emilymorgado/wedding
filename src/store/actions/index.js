@@ -1,8 +1,18 @@
-import { ADD_SUGGESTION } from 'store/actions/types';
+import {
+  SAVE_SUGGESTION,
+  SAVE_OFFER,
+} from 'store/actions/types';
 
-export function addSuggestion(suggestion) {
+export function saveSuggestion(suggestion) {
   return {
-    type: ADD_SUGGESTION,
+    type: SAVE_SUGGESTION,
     payload: suggestion,
+  };
+}
+
+export function saveOffer(offer) {
+  return {
+    type: SAVE_OFFER,
+    payload: offer,
   };
 }

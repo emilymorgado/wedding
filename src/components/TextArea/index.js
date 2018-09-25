@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from 'store/actions';
 
 class TextArea extends Component {
   state = {
-    comment: ''
+    text: ''
   };
 
   handleChange = event => {
-    this.setState({ comment: event.target.value });
+    this.setState({ text: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
-    // TODO - Call an action creator
-    // And save the comment
-
-    this.setState({ comment: '' });
+    this.props.saveSuggestion(this.state.text)
+    this.setState({ text: '' });
   };
 
   render() {
@@ -24,15 +24,13 @@ class TextArea extends Component {
         <form onSubmit={this.handleSubmit} >
           <textarea
             onChange={this.handleChange}
-            value={this.state.comment}
+            value={this.state.text}
           />
-          <div>
-            <button>Submit</button>
-          </div>
+          <button>Submit</button>
         </form>
       </div>
     )
   }
 }
 
-export default TextArea;
+export default connect(null, actions)(TextArea);

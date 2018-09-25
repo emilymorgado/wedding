@@ -1,37 +1,43 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import TextArea from '../TextArea';
+import { mount } from 'enzyme';
 
-let textarea;
+import TextArea from 'components/TextArea';
+import Root from 'Root';
+
+let textArea;
 
 beforeEach(() => {
-  textarea = shallow(<TextArea />);
+  textArea = mount(
+    <Root>
+      <TextArea />
+    </Root>
+  );
 });
 
 afterEach(() => {
-  textarea.unmount();
+  textArea.unmount();
 });
 
 it('has a text area and a button', () => {
-  expect(textarea.find('textarea').length).toEqual(1);
-  expect(textarea.find('button').length).toEqual(1);
+  expect(textArea.find('textarea').length).toEqual(1);
+  expect(textArea.find('button').length).toEqual(1);
 });
 
 describe('the text area', () => {
   beforeEach(() => {
-    textarea.find('textarea').simulate('change', {
+    textArea.find('textarea').simulate('change', {
       target: { value: 'new comment' }
     });
-    textarea.update();
+    textArea.update();
   });
 
   it('has a text area that users can type in', () => {
-    expect(textarea.find('textarea').prop('value')).toEqual('new comment');
+    expect(textArea.find('textarea').prop('value')).toEqual('new comment');
   });
 
   it('when form is submitted, text area gets emptied', () => {
-    textarea.find('button').simulate('submit');
-    textarea.update();
-    expect(textarea.find('textarea').text()).toEqual('');
+    textArea.find('form').simulate('submit');
+    textArea.update();
+    expect(textArea.find('textarea').prop('value')).toEqual('');
   });
 });

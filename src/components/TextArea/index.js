@@ -37,4 +37,12 @@ class TextArea extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    suggestions: suggestion => {
+      dispatch()
+    }
+  }
+}
+
 export default connect(null, actions)(TextArea);

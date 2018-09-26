@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from 'components/Navbar'; // This can be improved with react router?
 import llamas from 'components/Home/llamas.png';
+// import boobPic from 'components/Home/boob.jpg';
 
 class Home extends Component {
 

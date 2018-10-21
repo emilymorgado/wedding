@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from 'store/actions';
+// import { connect } from 'react-redux';
+// import * as actions from 'store/actions';
 
 class TextArea extends Component {
   state = {
@@ -37,12 +37,17 @@ class TextArea extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    suggestions: suggestion => {
-      dispatch()
-    }
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onSaveSuggestions: suggestion => {
+//       dispatch(saveSuggestion(suggestion));
+//     },
+    // offers: offer => {
+      // dispatch(saveOffer(offer));
+    // },
+  // };
+// };
 
-export default connect(null, actions)(TextArea);
+export default TextArea
+
+// export default connect(null, mapDispatchToProps)(TextArea);

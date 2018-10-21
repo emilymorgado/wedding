@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Container, Header } from 'semantic-ui-react';
 
-import Navbar from 'components/Navbar'; // This can be improved with react router?
+import Navbar from 'components/Navbar';
 import llamas from 'components/Home/llamas.png';
-// import boobPic from 'components/Home/boob.jpg';
+import './index.css';
 
 class Home extends Component {
 
@@ -10,16 +11,17 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Emily and Alexei at it at last!</h1>
-        <h2>27 June 2019</h2>
-        <div>
-          <img
-            className="img-responsive"
-            alt={'Us looking good!'}
-            src={llamas}
-          />
-          <span>The beautiful couple!</span>
-        </div>
+        {/* <Container textAlign='center' > */}
+          <h1>Emily and Alexei: text text text</h1>
+          <h2>13 April 2019</h2>
+          <Container>
+            <img
+              className="img-responsive"
+              alt={'Us looking good!'}
+              src={llamas}
+            />
+            <span>The beautiful couple!</span>
+        </Container>
       </div>
     )
   }

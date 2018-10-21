@@ -1,6 +1,9 @@
 import axios from 'axios';
+
 import {
-  SAVE_SUGGESTION,
+  SAVE_SUGGESTION_SUCCESS,
+  SAVE_SUGGESTION_FAILURE,
+  SAVE_SUGGESTION_STARTED,
   SAVE_OFFER,
 } from 'store/actions/types';
 
@@ -13,17 +16,26 @@ import {
 
 
 
-export const saveSuggestion = (suggestion) => {
-  axios.post('https://lovestuffwedding.firebaseio.com/suggestions.json', suggestion)
-    .then(response => {
-      console.log('response')
-      // dispatch(setIngredients(response.data));
-    })
-    .catch(error => {
-      console.log(error)
-      // dispatch(fetchIngredientsFailed());
-    });
-};
+// export const saveSuggestion = suggestion => {
+//   return dispatch => {
+//     dispatch(saveSuggestionStarted());
+//
+//     axios.post('https://jsonplaceholder.typicode.com/todos', {
+//
+//     })
+//   }
+//
+//
+//   axios.post('https://lovestuffwedding.firebaseio.com/suggestions.json', suggestion)
+//     .then(response => {
+//       console.log('response')
+//       // dispatch(setIngredients(response.data));
+//     })
+//     .catch(error => {
+//       console.log(error)
+//       // dispatch(fetchIngredientsFailed());
+//     });
+// };
 
 export function saveOffer(offer) {
   return {

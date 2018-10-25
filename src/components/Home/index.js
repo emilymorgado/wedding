@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 import Navbar from 'components/Navbar';
 import llamas from 'components/Home/llamas.png';
@@ -11,7 +11,6 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
-        {/* <Container textAlign='center' > */}
           <h1>Emily and Alexei: text text text</h1>
           <h2>13 April 2019</h2>
           <Container>

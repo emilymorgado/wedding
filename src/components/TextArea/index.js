@@ -39,6 +39,7 @@ class TextArea extends Component {
     )
   }
 }
+//If possible, fetch directly in the render()
 
 // const mapDispatchToProps = dispatch => {
 //   return {

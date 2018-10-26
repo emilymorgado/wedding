@@ -10,6 +10,14 @@ class Navbar extends Component {
   render() {
     const { activeItem } = this.state;
 
+    // Travel and Accommodation
+    // Tourism
+    // Schedule (wedding and park day)
+    // 'Details'
+    // RSVP
+    // Q&A
+    //
+
     return (
       <Menu tabular fixed='top' >
         <Menu.Item name='logo'>(Our logo goes here) Emily&Alexei</Menu.Item>

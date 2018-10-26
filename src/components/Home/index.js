@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
-          <h1>Emily and Alexei: text text text</h1>
+          <h1>Emily and Alexei</h1>
           <h2>13 April 2019</h2>
           <Container>
             <img

@@ -23,8 +23,8 @@ class Navbar extends Component {
           <Menu.Item name='Offer to Help' active={activeItem === 'offerhelp'} onClick={this.handleItemClick} />
         </Link>
 
-        <Link to='/'>
-          <Menu.Item name='venue'>Venue</Menu.Item>
+        <Link to='/venue'>
+          <Menu.Item name='venue' active={activeItem === 'venue'} onClick={this.handleItemClick}>Venue</Menu.Item>
         </Link>
 
         <Button size='small' color='green'>Click Here</Button>

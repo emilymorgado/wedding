@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Container } from 'semantic-ui-react';
-// import { connect } from 'react-redux';
-// import * as actions from 'store/actions';
 import './index.css';
 
 class TextArea extends Component {
@@ -26,16 +23,16 @@ class TextArea extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         <form onSubmit={this.handleSubmit} >
           <textarea
             onChange={this.handleChange}
             value={this.state.text}
             type={this.props.type}
           />
-          <Button color='violet' size='massive' >{this.props.btnName}</Button>
+          <button color='violet' size='massive' >{this.props.btnName}</button>
         </form>
-      </Container>
+      </div>
     )
   }
 }

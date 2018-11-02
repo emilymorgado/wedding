@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import TextArea from 'components/TextArea';
 
-// Includes suggestions, help offers, Q/A
-
 class MoreInfo extends Component {
   render() {
     return (
@@ -22,7 +20,13 @@ class MoreInfo extends Component {
             reducer='offer'
             btnName='Submit Offer'/>
         </div>
-        <div><h4>Q&A</h4></div>
+        <div>
+          <h4>Q&A</h4>
+          <TextArea
+            btnName='Submit Question'
+            type='q&a'
+          />
+        </div>
       </div>
     )
   }

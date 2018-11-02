@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from 'components/Navbar';
 import llamas from 'components/Home/llamas.png';
 import './index.css';
 

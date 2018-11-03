@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './index.css';
 
 class TextArea extends Component {
   state = {
@@ -30,7 +29,7 @@ class TextArea extends Component {
             value={this.state.text}
             type={this.props.type}
           />
-          <button color='violet' size='massive' >{this.props.btnName}</button>
+          <button className={`${this.props.type}-btn`} >{this.props.btnName}</button>
         </form>
       </div>
     )

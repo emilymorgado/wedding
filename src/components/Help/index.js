@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
-
-import Navbar from 'components/Navbar'; // This can be improved with react router?
 import TextArea from 'components/TextArea';
 
 class Help extends Component {
-
   render() {
     return (
-      <div>
-        <Navbar />
-        <h1>I'm interested in helping!</h1>
-        <h2>Let us know what you can help with:</h2>
-        <TextArea
-          reducer='offer'
-          btnName='Submit Offer'/>
+      <div className='main-container'>
+        <h1>Help/Suggestions/Special Requests</h1>
+        <p>Have ideas for making this a great event? Have special needs? Skills or toys to offer/contribute/lend? Want to help us set up or tear down? We greatly appreciate all that you have to offer.</p>
+        <div>
+          <TextArea
+            label='name'
+            type='small'
+          />
+          <TextArea
+            label='email'
+            type='small'
+          />
+          <TextArea
+            label='message'
+            btnName='Let us know!'
+            type='big'
+          />
+        </div>
       </div>
     )
   }

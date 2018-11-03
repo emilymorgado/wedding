@@ -1,3 +1,4 @@
+// COMBINE WITH VENUE
 import React, { Component } from 'react';
 import TextArea from 'components/TextArea';
 

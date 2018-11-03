@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import Home from 'components/Home';
-import MoreInfo from 'components/MoreInfo';
-import Accommodation from 'components/Accommodation';
+import Info from 'components/Info';
 import Gifts from 'components/Gifts';
-import './index.css';
+import Help from 'components/Help';
+import Accommodation from 'components/Accommodation';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState('home');
@@ -17,12 +17,12 @@ const Navbar = () => {
 
   if (isActive === 'home') {
     displayComponent = <Home />
-  } else if (isActive === 'more info') {
-    displayComponent = <MoreInfo />
+  } else if (isActive === 'wedding info') {
+    displayComponent = <Info />
   } else if (isActive === 'accomodation') {
     displayComponent = <Accommodation />
-  } else if (isActive === 'rsvp') {
-    displayComponent = <Home /> //<RSVP />
+  } else if (isActive === 'help') {
+    displayComponent = <Help /> //<HELP />
   } else if (isActive === 'gifts') {
     displayComponent = <Gifts />
   } else {
@@ -31,14 +31,14 @@ const Navbar = () => {
 
     return (
       <div>
-        <div fixed='top' >
-          <button type='button' name='logo'>(Our logo goes here) Emily&Alexei> </button>
-            <button type='button' onClick={() => setIsActive('home')}>Home</button>
-            <button type='button' onClick={() => setIsActive('more info')}>More Info</button>
-            <button type='button' onClick={() => setIsActive('accomodation')}>Accommodation and Tourism</button>
-            <button type='button' onClick={() => setIsActive('gifts')}>Gifts</button>
-            <button type='button' onClick={() => setIsActive('rsvp')}>RSVP</button>
-          <button type='button' size='small' color='green'>Sign in</button>
+        <div className='nav-container'>
+          {/* <div className='nav-logo'>(Our logo goes here) Emily&Alexei</div> */}
+            <button className='nav-button' onClick={() => setIsActive('home')}>HOME</button>
+            <button className='nav-button' onClick={() => setIsActive('wedding info')}>WEDDING INFO</button>
+            <button className='nav-button' onClick={() => setIsActive('gifts')}>GIFTS</button>
+            <button className='nav-button' onClick={() => setIsActive('help')}>HELP/SUGGESTIONS</button>
+            <button className='nav-button' onClick={() => setIsActive('accomodation')}>ACCOMMODATION/TOURISM</button>
+          <button className='signin-button'>SIGN IN</button>
         </div>
         {displayComponent}
       </div>

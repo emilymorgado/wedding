@@ -1,5 +1,6 @@
+// COMBINE WITH WEDDING INFO
+
 import React, { Component } from 'react';
-// import { Container } from 'semantic-ui-react';
 // import mapboxgl from 'mapbox-gl';
 // import GoogleMapReact from 'google-map-react';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Home from 'components/Home';
 import Info from 'components/Info';
@@ -10,9 +10,9 @@ import Accommodation from 'components/Accommodation';
 const Navbar = () => {
   const [isActive, setIsActive] = useState('home');
 
-  // useEffect(() => {
-  //   document.title = isActive
-  // });
+  useEffect(() => {
+    document.title = isActive
+  });
 
   let displayComponent = <Home />
 
@@ -20,10 +20,10 @@ const Navbar = () => {
     displayComponent = <Home />
   } else if (isActive === 'wedding info') {
     displayComponent = <Info />
-  } else if (isActive === 'accomodation') {
+  } else if (isActive === 'accomodation and tourism') {
     displayComponent = <Accommodation />
-  } else if (isActive === 'help') {
-    displayComponent = <Help /> //<HELP />
+  } else if (isActive === 'help and suggestions') {
+    displayComponent = <Help />
   } else if (isActive === 'gifts') {
     displayComponent = <Gifts />
   } else {
@@ -54,13 +54,13 @@ const Navbar = () => {
             </button>
             <button
               className='nav-button'
-              onClick={() => setIsActive('help')}>
+              onClick={() => setIsActive('help and suggestions')}>
               <FontAwesomeIcon className='heart-icon' icon='hippo' size='2x' />
               HELP/SUGGESTIONS
             </button>
             <button
               className='nav-button'
-              onClick={() => setIsActive('accomodation')}>
+              onClick={() => setIsActive('accomodation and tourism')}>
               <FontAwesomeIcon className='heart-icon' icon='home' size='2x' />
               ACCOMMODATION/TOURISM
             </button>

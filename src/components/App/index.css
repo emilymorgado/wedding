@@ -72,7 +72,11 @@ textarea {
 	background-repeat: no-repeat;
 }
 
-.big-btn {
+textarea.small-input {
+  height: 2em;
+}
+
+.form-btn {
   height: 100px;
   width: 200px;
   background-color: #12C988;
@@ -82,9 +86,6 @@ textarea {
   font-family: 'Pattaya', sans-serif;
 }
 
-.small-btn {
-  display: none;
-}
 
 /*  HOMEPAGE  */
 .rsvp-button {

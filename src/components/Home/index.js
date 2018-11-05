@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import llamas from 'components/Home/llamas.png';
 
-// Includes date, schedule, venue, park info, family party, maps, travel tips
+// Includes: schedule, park info, travel tips
 
 class Home extends Component {
 
   render() {
     return (
       <div>
-        {/* <h1>Emily and Alexei</h1> */}
         <h1>There is a wedding. This is a wedding. We're getting married. SURPRISE!</h1>
         <h2>13 April 2019</h2>
+        <h3>4:30 PM</h3>
         <div className='main-container'>
             <img
-              className="img-responsive"
               alt={'Us looking good!'}
               src={llamas}
             />

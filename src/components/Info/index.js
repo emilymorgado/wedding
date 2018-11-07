@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import heartIcon from './heart-icon.png';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import TextArea from 'components/TextArea';
 
 const Info = () => {
   return (

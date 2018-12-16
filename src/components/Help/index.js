@@ -1,68 +1,124 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { useState } from 'react';
-import axios from 'axios';
+import { css } from 'emotion';
+import fire from 'fire';
+import axiosInstance from 'axiosQuestions';
 
-const Help = () => {
-  return (
-    <div className='main-container'>
-      <h1>Help/Suggestions/Special Requests</h1>
-      <p>Have ideas for making this a great event? Have special needs? Skills or toys to offer/contribute/lend? Want to help us set up or tear down? We greatly appreciate all that you have to offer.</p>
-      <div>
-        <Form
-          btnName='Let us know!'/>
+
+class QandA extends Component {
+  state = {
+    ref: fire.database().ref('questions').orderByKey(),
+    docs: [],
+    loading: true,
+  }
+
+  componentDidMount() {
+    axiosInstance.get('/questions.json')
+      .then(res => {
+        const tammy = [];
+
+        for (let key in res.data) {
+          let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+          tammy.push(enter);
+        }
+        this.setState({ loading: false, docs: tammy });
+      })
+      .catch(err => {
+        this.setState({ loading: false });
+      });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.docs !== prevState.docs) {
+      console.log(prevProps)
+      console.log(prevState)
+      console.log(this.state)
+    }
+  }
+
+  render() {
+    // STYLES
+    const questionStyle = css`
+      font-family: 'Mali', cursive;
+      font-size: 2em;
+      color: #272727;
+    `
+
+    console.log('render', this.state.docs, this.state.docs.length)
+
+    let questionsAndAnswers = this.state.docs.map(doc => {
+      console.log('doc', doc, doc.id, doc.question)
+      return (
+        <li key={doc.id}>{doc.question ? doc.question : null}</li>
+      )
+    });
+
+    return (
+      <div className='main-container'>
+        <h1>Questions and Answers</h1>
+        <p className={'description'}>
+          Have a question? Have special needs? Please let us know!
+        </p>
+        <div>
+          <Form
+            btnName='Let us know!'/>
+        </div>
+        <ul className={questionStyle}>
+          {questionsAndAnswers}
+        </ul>
       </div>
-    </div>
-  )
+    )
+  }
 }
-export default Help;
+export default QandA;
 
 
+  // Improvements: make the form a button that opens a modal window
 const Form = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [text, setText] = useState('');
-
-  const handleNameChange = event => {
-    setName(event.target.value)
-  };
-
-  const handleEmailChange = event => {
-    setEmail(event.target.value)
-  };
 
   const handleTextChange = event => {
     setText(event.target.value)
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
-    setName('')
-    setEmail('')
-    setText('')
+    let data = { question: text}
+    // Send the message to Firebase
+    fire.database().ref('questions').push(data);
+    setText('');
   }
+
+  // STYLES
+  const submitButton = css`
+    height: 80px;
+    width: 170px;
+    background-color: #12C988;
+    border: 4px solid #439F76;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Pattaya', sans-serif;
+  `
+  const questionArea = css`
+    height: 400px;
+    width: 1000px;
+    font-size: 1.5em;
+    font-family: 'Mali', cursive;
+    border: 5px solid #C34271;
+    background-color: #F070A1;
+  `
 
   return (
     <div>
       <form onSubmit={handleSubmit} >
         <textarea
-          className='small-input'
-          placeholder='Name'
-          onChange={handleNameChange}
-          value={name}
-        />
-        <textarea
-          className='small-input'
-          placeholder='Email'
-          onChange={handleEmailChange}
-          value={email}
-        />
-        <textarea
+          className={questionArea}
           placeholder='Your message here...'
           onChange={handleTextChange}
           value={text}
         />
-        <button className={'form-btn'}>Let Us Know!</button>
+        <br/>
+        <button className={submitButton}>Let Us Know!</button>
       </form>
     </div>
   )

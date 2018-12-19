@@ -1,8 +1,8 @@
-import { SAVE_OFFER } from 'store/actions/types';
+import { SAVE_QUESTION } from 'store/actions/types';
 
 export default function(state=[], action) {
   switch (action.type) {
-    case SAVE_OFFER:
+    case SAVE_QUESTION:
       return [...state, action.payload];
     default:
       return state;

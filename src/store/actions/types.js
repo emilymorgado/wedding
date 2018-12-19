@@ -1,2 +1,1 @@
-export const SAVE_SUGGESTION = 'add_suggestion';
-export const SAVE_OFFER = 'save_offer';
+export const SAVE_QUESTION = 'SAVE_QUESTION';

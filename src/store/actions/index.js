@@ -1,18 +1,30 @@
-import axios from 'axios';
+import axiosInstance from 'axiosQuestions';
 
 import {
-  SAVE_SUGGESTION_SUCCESS,
-  SAVE_SUGGESTION_FAILURE,
-  SAVE_SUGGESTION_STARTED,
-  SAVE_OFFER,
+  SAVE_QUESTION,
 } from 'store/actions/types';
 
-// export function saveSuggestion(suggestion) {
-//   return {
-//     type: SAVE_SUGGESTION,
-//     payload: suggestion,
-//   };
-// }
+
+export function saveQuestion() {
+  axiosInstance.get('/questions.json')
+    .then(res => {
+      const docs = [];
+
+      for (let key in res.data) {
+        let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+        docs.push(enter);
+      }
+      return docs;
+    })
+    .catch(err => {
+      return err;
+    });
+
+  return {
+    type: SAVE_QUESTION,
+    payload: docs,
+  };
+}
 
 
 
@@ -36,10 +48,10 @@ import {
 //       // dispatch(fetchIngredientsFailed());
 //     });
 // };
-
-export function saveOffer(offer) {
-  return {
-    type: SAVE_OFFER,
-    payload: offer,
-  };
-}
+//
+// export function saveOffer(offer) {
+//   return {
+//     type: SAVE_OFFER,
+//     payload: offer,
+//   };
+// }

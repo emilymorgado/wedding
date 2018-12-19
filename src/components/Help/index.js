@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { useState } from 'react';
 import { css } from 'emotion';
 import fire from 'fire';
@@ -13,15 +13,16 @@ class QandA extends Component {
   }
 
   componentDidMount() {
+    //Now getting saved in action/reducer?
     axiosInstance.get('/questions.json')
       .then(res => {
-        const tammy = [];
+        const docs = [];
 
         for (let key in res.data) {
           let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-          tammy.push(enter);
+          docs.push(enter);
         }
-        this.setState({ loading: false, docs: tammy });
+        this.setState({ loading: false, docs });
       })
       .catch(err => {
         this.setState({ loading: false });
@@ -29,6 +30,11 @@ class QandA extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log('UPDATE', prevProps, this.props)
+    if (this.props !== prevProps) {
+      console.log('BIG IF', prevProps, this.props)
+    }
+
     if (this.state.docs !== prevState.docs) {
       console.log(prevProps)
       console.log(prevState)
@@ -37,14 +43,13 @@ class QandA extends Component {
   }
 
   render() {
+    console.log('Render QandA', this.props)
     // STYLES
     const questionStyle = css`
       font-family: 'Mali', cursive;
       font-size: 2em;
       color: #272727;
     `
-
-    console.log('render', this.state.docs, this.state.docs.length)
 
     let questionsAndAnswers = this.state.docs.map(doc => {
       console.log('doc', doc, doc.id, doc.question)
@@ -73,7 +78,7 @@ class QandA extends Component {
 export default QandA;
 
 
-  // Improvements: make the form a button that opens a modal window
+// Improvements: make the form a button that opens a modal window
 const Form = () => {
   const [text, setText] = useState('');
 
@@ -84,8 +89,10 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let data = { question: text}
-    // Send the message to Firebase
-    fire.database().ref('questions').push(data);
+    if (data.length > 0) {
+      // Send the message to Firebase
+      fire.database().ref('questions').push(data);
+    }
     setText('');
   }
 

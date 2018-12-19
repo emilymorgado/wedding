@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import llamas from 'components/Home/llamas.png';
 
-// Includes: schedule, park info, travel tips
-
+// TODO: Start time h3
 class Home extends Component {
 
   render() {
     return (
       <div>
-        <h1>There is a wedding. This is a wedding. We're getting married. SURPRISE!</h1>
+        <h1>
+          <FontAwesomeIcon className='heart-icon' icon='heart' size='1x' />
+          Emily and Alexei
+          <FontAwesomeIcon className='heart-icon' icon='heart' size='1x' />
+        </h1>
         <h2>13 April 2019</h2>
-        <h3>4:30 PM</h3>
         <div className='main-container'>
             <img
               alt={'Us looking good!'}

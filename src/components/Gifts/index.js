@@ -8,7 +8,7 @@ const Gifts = () => {
       and it is already filled with all the things we could ever need to make it a home.
       While the presence of your company is the only gift we could ever ask for,
       an alternative registry has been set up here for those who have expressed an interest in offering a gift to mark the occasion.
-    </div>  
+    </div>
   )
 }
 

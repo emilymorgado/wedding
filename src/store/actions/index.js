@@ -4,8 +4,13 @@ import {
   SAVE_QUESTION,
 } from 'store/actions/types';
 
-
-export function saveQuestion() {
+//pass in query parameters
+//can curry to dispatch
+// can be:
+// const query = ''
+// const url = 'api + query'
+// return axios.get(url, {headers}).then(data => {dispatch({type:SAVE_QUESTION,payload:data})})
+export const saveQuestion = () => {
   axiosInstance.get('/questions.json')
     .then(res => {
       const docs = [];

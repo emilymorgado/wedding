@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import llamas from 'components/Home/llamas.png';
+import Button from 'components/reusable/Button';
 
 // TODO: Start time h3
 class Home extends Component {
@@ -20,7 +21,8 @@ class Home extends Component {
               src={llamas}
             />
             <p>"The beautiful couple!" -Unknown</p>
-            <button className='rsvp-button'>RSVP</button>
+            <Button text='RSVP' type='bigButton'/>
+
         </div>
       </div>
     )

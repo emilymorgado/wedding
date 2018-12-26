@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Home from 'components/Home';
 import Info from 'components/Info';
 import Gifts from 'components/Gifts';
-import QandA from 'components/Help';
+import QandA from 'components/QandA';
 import Accommodation from 'components/Accommodation';
 
 const Navbar = () => {

@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import { useState } from 'react';
 import { css } from 'emotion';
-import fire from 'fire';
-import axiosInstance from 'axiosQuestions';
+// import fire from 'fire';
+// import axiosInstance from 'axiosInstance';
 
 
 class QandA extends Component {
   state = {
-    ref: fire.database().ref('questions').orderByKey(),
+    // ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }
 
   componentDidMount() {
     //Now getting saved in action/reducer?
-    axiosInstance.get('/questions.json')
-      .then(res => {
-        const docs = [];
-
-        for (let key in res.data) {
-          let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-          docs.push(enter);
-        }
-        this.setState({ loading: false, docs });
-      })
-      .catch(err => {
-        this.setState({ loading: false });
-      });
+    // axiosInstance.get('/questions.json')
+    //   .then(res => {
+    //     const docs = [];
+    //
+    //     for (let key in res.data) {
+    //       let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+    //       docs.push(enter);
+    //     }
+    //     this.setState({ loading: false, docs });
+    //   })
+    //   .catch(err => {
+    //     this.setState({ loading: false });
+    //   });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -91,7 +91,7 @@ const Form = () => {
     let data = { question: text}
     if (data.length > 0) {
       // Send the message to Firebase
-      fire.database().ref('questions').push(data);
+      // fire.database().ref('questions').push(data);
     }
     setText('');
   }

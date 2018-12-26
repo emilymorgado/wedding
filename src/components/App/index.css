@@ -22,6 +22,10 @@ p {
   color: #272727;
 }
 
+.heart-icon {
+  color: #C34271;
+}
+
 
 /*  TEXT AREA  */
 textarea {
@@ -65,20 +69,4 @@ a:visited {
 }
 a:hover {
   color: #16FFBD;
-}
-
-/*  MAP */
-.map-layout {
-  height: 400px;
-}
-.map-info {
-  width: 50%;
-  float: left;
-}
-.map-container {
-  width: 50%;
-  float: right;
-}
-.heart-icon {
-  color: #C34271;
 }

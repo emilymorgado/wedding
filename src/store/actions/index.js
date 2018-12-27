@@ -1,4 +1,4 @@
-import axiosInstance from 'axiosQuestions';
+import axiosInstance from 'axiosInstance';
 
 import {
   SAVE_QUESTION,
@@ -29,6 +29,11 @@ export const saveQuestion = () => {
     type: SAVE_QUESTION,
     payload: docs,
   };
+}
+
+
+export const getQuestionsAndAnswers = () => {
+
 }
 
 

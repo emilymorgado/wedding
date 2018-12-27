@@ -23,3 +23,7 @@ yarn-error.log*
 #database
 src/axiosInstance.js
 src/fire.js
+.firebaserc
+.firebase/
+database.rules.json
+firebase.json

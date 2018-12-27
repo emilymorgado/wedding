@@ -22,7 +22,6 @@ class Home extends Component {
             />
             <p>"The beautiful couple!" -Unknown</p>
             <Button text='RSVP' type='bigButton'/>
-
         </div>
       </div>
     )

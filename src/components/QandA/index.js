@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { useState } from 'react';
 import { css } from 'emotion';
-import fire from 'fire';
-import axiosInstance from 'axiosInstance';
+// import fire from 'fire';
+// import axiosInstance from 'axiosInstance';
 
 
 class QandA extends Component {
@@ -14,20 +14,20 @@ class QandA extends Component {
 
   componentDidMount() {
     //Now getting saved in action/reducer?
-    axiosInstance.get('/questions.json')
-      .then(res => {
-        const docs = [];
-
-        for (let key in res.data) {
-          let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-          docs.push(enter);
-        }
-        this.setState({ loading: false, docs });
-        //set to redux store instead
-      })
-      .catch(err => {
-        this.setState({ loading: false });
-      });
+    // axiosInstance.get('/questions.json')
+    //   .then(res => {
+    //     const docs = [];
+    //
+    //     for (let key in res.data) {
+    //       let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+    //       docs.push(enter);
+    //     }
+    //     this.setState({ loading: false, docs });
+    //     //set to redux store instead
+    //   })
+    //   .catch(err => {
+    //     this.setState({ loading: false });
+    //   });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -92,7 +92,7 @@ const Form = () => {
     let data = { question: text, answer: '' }
     if (data.question.length > 0) {
       // Send the message to Firebase
-      fire.database().ref('questions').push(data);
+      // fire.database().ref('questions').push(data);
 
     }
     setText('');

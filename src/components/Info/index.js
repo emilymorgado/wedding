@@ -100,13 +100,3 @@ class Map extends React.Component {
   }
 }
 ReactDOM.render(<Map />, document.getElementById('root'));
-// // And other info:
-// // https://apracticalwedding.com/children-not-invited-to-wedding/
-// // <Container>
-// //   Per the guest limit at our venue, we will we not be able to have children attend.
-// //   However, if you are traveling with you children to our wedding,
-// //   we have coordinated with our hotel and a licensed local nanny service to provide childcare during the event.
-// //   Please indicate on your RSVP card if you will be needing childcare.
-// //   Also, we joyously welcome your children to our post-wedding brunch the following morning.
-// //   Don’t hesitate to let us know how we further help!
-// // </Container>

@@ -24,8 +24,14 @@ const Info = () => {
       <div className={mapLayout}>
         <div className={mapInfo}>
           <h2>Location</h2>
-          <p>Neyborly - Poet's Corner:</p>
-          <p>2043 San Pablo Ave, Berkeley, CA 94702</p>
+          <a
+            href='https://goo.gl/maps/2RaUrcrLV8n'
+            target='_blank'
+            rel="noopener noreferrer"
+          >
+            <p>Neyborly - Poet's Corner:</p>
+            <p>2043 San Pablo Ave, Berkeley, CA 94702</p>
+          </a>
         </div>
         <div className={mapContainer}>
           <Map />
@@ -33,12 +39,12 @@ const Info = () => {
       </div>
       <div>
         <h3>Attire:</h3>
-        <p>Come as you are! We hope to see everything from prom dresses to costumes, to onsies. Nothing is off limits, and creativity is encouraged!</p>
+        <p>Come as you are! We hope to see everything from your favorite outfit to an ancient prom dress, from costumes to adult onsies. Nothing is off limits, and creativity is encouraged!</p>
       </div>
       <div>
         <h4>What you can expect:</h4>
-        <p>You will get to witness the wedding ceremony between Emily Morgado and Alexei Samimi.
-        That will be followed by a Burning Man themed, 21+ party which will include food, drink, dessert, music, dancing, and more.
+        <p>You will witness the wedding ceremony between Emily Morgado and Alexei Samimi.
+        That will be followed by a Burning Man styled, 21+ party which will include dinner, drinks, dessert, music, dancing, and more.
         Due to the number of guests coming, there will not be a sit-down dinner.</p>
       </div>
     </div>

@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { css } from 'emotion';
 import fire from 'fire';
 import axiosInstance from 'axiosInstance';
+import Button from 'components/reusable/Button';
 
 
 class QandA extends Component {
   state = {
-    // ref: fire.database().ref('questions').orderByKey(),
+    ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }
@@ -99,15 +100,6 @@ const Form = () => {
   }
 
   // STYLES
-  const submitButton = css`
-    height: 80px;
-    width: 170px;
-    background-color: #12C988;
-    border: 4px solid #439F76;
-    border-radius: 10px;
-    font-size: 1.5em;
-    font-family: 'Pattaya', sans-serif;
-  `
   const questionArea = css`
     height: 400px;
     width: 1000px;
@@ -127,7 +119,7 @@ const Form = () => {
           value={text}
         />
         <br/>
-        <button className={submitButton}>Let Us Know!</button>
+        <Button text='Let Us Know!' type='formButton' />
       </form>
     </div>
   )

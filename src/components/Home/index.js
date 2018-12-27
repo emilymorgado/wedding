@@ -21,7 +21,7 @@ class Home extends Component {
               src={llamas}
             />
             <p>"The beautiful couple!" -Unknown</p>
-            <Button text='RSVP' type='bigButton'/>
+            <Button text='RSVP' type='bigButton' />
 
         </div>
       </div>

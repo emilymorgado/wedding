@@ -7,7 +7,7 @@ import axiosInstance from 'axiosInstance';
 
 class QandA extends Component {
   state = {
-    ref: fire.database().ref('questions').orderByKey(),
+    // ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }

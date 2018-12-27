@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
+import { css } from 'emotion';
 import heartIcon from './heart-icon.png';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
+
+// STYLES
+const mapLayout = css`
+  height: 400px;
+`
+const mapInfo = css`
+  width: 50%;
+  float: left;
+`
+const mapContainer = css`
+  width: 50%;
+  float: right;
+`
 
 const Info = () => {
   return (
     <div>
       <h1>Venue and Wedding Info</h1>
-      <div className='map-layout'>
-        <div className='map-info'>
+      <div className={mapLayout}>
+        <div className={mapInfo}>
           <h2>Location</h2>
           <p>Neyborly - Poet's Corner:</p>
           <p>2043 San Pablo Ave, Berkeley, CA 94702</p>
         </div>
-        <div className='map-container'>
+        <div className={mapContainer}>
           <Map />
         </div>
       </div>

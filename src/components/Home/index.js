@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import llamas from 'components/Home/llamas.png';
 import Button from 'components/reusable/Button';
@@ -7,19 +7,19 @@ const Home = () => {
   return (
     <div>
       <h1>
-        <FontAwesomeIcon className='heart-icon' icon='heart' size='1x' />
+        <FontAwesomeIcon className="heart-icon" icon="heart" size="1x" />
         Emily and Alexei
-        <FontAwesomeIcon className='heart-icon' icon='heart' size='1x' />
+        <FontAwesomeIcon className="heart-icon" icon="heart" size="1x" />
       </h1>
       <h2>13 April 2019</h2>
       <h3>at 16:30</h3>
-      <div className='main-container'>
+      <div className="main-container">
           <img
             alt={'Us looking good!'}
             src={llamas}
           />
           <p>"The beautiful couple!" -Unknown</p>
-          <Button text='RSVP' type='bigButton' />
+          <Button text="RSVP" type="bigButton" />
 
       </div>
     </div>

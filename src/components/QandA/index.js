@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { css } from 'emotion';
 import fire from 'fire';
 import axiosInstance from 'axiosInstance';
@@ -19,8 +18,8 @@ class QandA extends Component {
       .then(res => {
         const docs = [];
 
-        for (let key in res.data) {
-          let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+        for (const key in res.data) {
+          const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
           docs.push(enter);
         }
         this.setState({ loading: false, docs });
@@ -28,6 +27,7 @@ class QandA extends Component {
       })
       .catch(err => {
         this.setState({ loading: false });
+        console.warn(err)
       });
   }
 
@@ -53,7 +53,7 @@ class QandA extends Component {
       color: #272727;
     `
 
-    let questionsAndAnswers = this.state.docs.map(doc => {
+    const questionsAndAnswers = this.state.docs.map(doc => {
       console.log('doc', doc, doc.id, doc.question)
       return (
         <li key={doc.id}>{doc.question ? doc.question : null}</li>
@@ -61,14 +61,15 @@ class QandA extends Component {
     });
 
     return (
-      <div className='main-container'>
+      <div className="main-container">
         <h1>Questions and Answers</h1>
         <p className={'description'}>
           Have a question? Have special needs? Please let us know!
         </p>
         <div>
           <Form
-            btnName='Let us know!'/>
+            btnName="Let us know!"
+          />
         </div>
         <ul className={questionStyle}>
           {questionsAndAnswers}
@@ -90,7 +91,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let data = { question: text, answer: '' }
+    const data = { question: text, answer: '' }
     if (data.question.length > 0) {
       // Send the message to Firebase
       fire.database().ref('questions').push(data);
@@ -114,12 +115,12 @@ const Form = () => {
       <form onSubmit={handleSubmit} >
         <textarea
           className={questionArea}
-          placeholder='Your message here...'
+          placeholder="Your message here..."
           onChange={handleTextChange}
           value={text}
         />
         <br/>
-        <Button text='Let Us Know!' type='formButton' />
+        <Button text="Let Us Know!" type="formButton" />
       </form>
     </div>
   )

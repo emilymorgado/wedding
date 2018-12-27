@@ -14,13 +14,12 @@ const Home = () => {
       <h2>13 April 2019</h2>
       <h3>at 16:30</h3>
       <div className="main-container">
-          <img
-            alt={'Us looking good!'}
-            src={llamas}
-          />
-          <p>"The beautiful couple!" -Unknown</p>
-          <Button text="RSVP" type="bigButton" />
-
+        <img
+          alt={'Us looking good!'}
+          src={llamas}
+        />
+        <p>"The beautiful couple!" -Unknown</p>
+        <Button text="RSVP" type="bigButton" />
       </div>
     </div>
   )

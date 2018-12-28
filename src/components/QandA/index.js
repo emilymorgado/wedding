@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
-import { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { css } from 'emotion';
-// import fire from 'fire';
-// import axiosInstance from 'axiosInstance';
+import fire from 'fire';
+import axiosInstance from 'axiosInstance';
+import Button from 'components/reusable/Button';
 
 
 class QandA extends Component {
   state = {
-    // ref: fire.database().ref('questions').orderByKey(),
+    ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }
 
   componentDidMount() {
     //Now getting saved in action/reducer?
-    // axiosInstance.get('/questions.json')
-    //   .then(res => {
-    //     const docs = [];
-    //
-    //     for (let key in res.data) {
-    //       let enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-    //       docs.push(enter);
-    //     }
-    //     this.setState({ loading: false, docs });
-    //     //set to redux store instead
-    //   })
-    //   .catch(err => {
-    //     this.setState({ loading: false });
-    //   });
+    axiosInstance.get('/questions.json')
+      .then(res => {
+        const docs = [];
+
+        for (const key in res.data) {
+          const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+          docs.push(enter);
+        }
+        this.setState({ loading: false, docs });
+        //set to redux store instead
+      })
+      .catch(err => {
+        this.setState({ loading: false });
+        console.warn(err)
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -52,7 +53,7 @@ class QandA extends Component {
       color: #272727;
     `
 
-    let questionsAndAnswers = this.state.docs.map(doc => {
+    const questionsAndAnswers = this.state.docs.map(doc => {
       console.log('doc', doc, doc.id, doc.question)
       return (
         <li key={doc.id}>{doc.question ? doc.question : null}</li>
@@ -60,14 +61,15 @@ class QandA extends Component {
     });
 
     return (
-      <div className='main-container'>
+      <div className="main-container">
         <h1>Questions and Answers</h1>
         <p className={'description'}>
           Have a question? Have special needs? Please let us know!
         </p>
         <div>
           <Form
-            btnName='Let us know!'/>
+            btnName="Let us know!"
+          />
         </div>
         <ul className={questionStyle}>
           {questionsAndAnswers}
@@ -89,7 +91,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let data = { question: text, answer: '' }
+    const data = { question: text, answer: '' }
     if (data.question.length > 0) {
       // Send the message to Firebase
       // fire.database().ref('questions').push(data);
@@ -99,15 +101,6 @@ const Form = () => {
   }
 
   // STYLES
-  const submitButton = css`
-    height: 80px;
-    width: 170px;
-    background-color: #12C988;
-    border: 4px solid #439F76;
-    border-radius: 10px;
-    font-size: 1.5em;
-    font-family: 'Pattaya', sans-serif;
-  `
   const questionArea = css`
     height: 400px;
     width: 1000px;
@@ -122,12 +115,12 @@ const Form = () => {
       <form onSubmit={handleSubmit} >
         <textarea
           className={questionArea}
-          placeholder='Your message here...'
+          placeholder="Your message here..."
           onChange={handleTextChange}
           value={text}
         />
         <br/>
-        <button className={submitButton}>Let Us Know!</button>
+        <Button text="Let Us Know!" type="formButton" />
       </form>
     </div>
   )

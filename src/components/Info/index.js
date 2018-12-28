@@ -25,8 +25,8 @@ const Info = () => {
         <div className={mapInfo}>
           <h2>Location</h2>
           <a
-            href='https://goo.gl/maps/2RaUrcrLV8n'
-            target='_blank'
+            href="https://goo.gl/maps/2RaUrcrLV8n"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <p>Neyborly - Poet's Corner:</p>

@@ -4,8 +4,8 @@ import { css } from 'emotion';
 
 // STYLES
 const btnStyle = css`
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 `
 
 const Gifts = () => {
@@ -13,7 +13,13 @@ const Gifts = () => {
     <div>
       <h1>Gifts</h1>
       <div className={btnStyle}>
-        <Button text='Registry this way'/>
+        <a
+          href="https://www.zola.com/registry/emilyandalexei"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button text="Registry this way" type="bigButton" />
+        </a>
       </div>
     </div>
   )

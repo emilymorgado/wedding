@@ -1,34 +1,34 @@
 import React, { Component, useState } from 'react';
 import { css } from 'emotion';
-import fire from 'fire';
-import axiosInstance from 'axiosInstance';
+// import fire from 'fire';
+// import axiosInstance from 'axiosInstance';
 import Button from 'components/reusable/Button';
 
 
 class QandA extends Component {
   state = {
-    ref: fire.database().ref('questions').orderByKey(),
+    // ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }
 
   componentDidMount() {
     //Now getting saved in action/reducer?
-    axiosInstance.get('/questions.json')
-      .then(res => {
-        const docs = [];
-
-        for (const key in res.data) {
-          const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-          docs.push(enter);
-        }
-        this.setState({ loading: false, docs });
-        //set to redux store instead
-      })
-      .catch(err => {
-        this.setState({ loading: false });
-        console.warn(err)
-      });
+    // axiosInstance.get('/questions.json')
+    //   .then(res => {
+    //     const docs = [];
+    //
+    //     for (const key in res.data) {
+    //       const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+    //       docs.push(enter);
+    //     }
+    //     this.setState({ loading: false, docs });
+    //     //set to redux store instead
+    //   })
+    //   .catch(err => {
+    //     this.setState({ loading: false });
+    //     console.warn(err)
+    //   });
   }
 
   componentDidUpdate(prevProps, prevState) {

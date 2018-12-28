@@ -22,6 +22,18 @@ p {
   color: #272727;
 }
 
+@media (max-width: 736px) {
+  p {
+    font-size: 1.6em;
+  }
+  h1, h2, h3, h4 {
+    font-size: 3em;
+  }
+  h2, h3, h4 {
+    font-size: 2em;
+  }
+}
+
 .heart-icon {
   color: #C34271;
 }

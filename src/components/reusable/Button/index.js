@@ -17,6 +17,11 @@ const Button = props => {
         margin-left: 33%;
         font-size: 5em;
         font-family: 'Pattaya', sans-serif;
+        @media (max-width: 736px) {
+          height: 100px;
+          width: 200px;
+          font-size: 1.6em;
+        }
       `;
       break;
     case 'signinBtn':

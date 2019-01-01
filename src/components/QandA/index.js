@@ -78,6 +78,17 @@ class QandA extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    action: state.action,
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ action }, dispatch);
+}
+
 export default QandA;
 
 

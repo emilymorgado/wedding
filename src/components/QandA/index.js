@@ -1,34 +1,34 @@
 import React, { Component, useState } from 'react';
 import { css } from 'emotion';
-// import fire from 'fire';
-// import axiosInstance from 'axiosInstance';
+import fire from 'fire';
+import axiosInstance from 'axiosInstance';
 import Button from 'components/reusable/Button';
 
 
 class QandA extends Component {
   state = {
-    // ref: fire.database().ref('questions').orderByKey(),
+    ref: fire.database().ref('questions').orderByKey(),
     docs: [],
     loading: true,
   }
 
   componentDidMount() {
-    //Now getting saved in action/reducer?
-    // axiosInstance.get('/questions.json')
-    //   .then(res => {
-    //     const docs = [];
-    //
-    //     for (const key in res.data) {
-    //       const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
-    //       docs.push(enter);
-    //     }
-    //     this.setState({ loading: false, docs });
-    //     //set to redux store instead
-    //   })
-    //   .catch(err => {
-    //     this.setState({ loading: false });
-    //     console.warn(err)
-    //   });
+    // Now getting saved in action/reducer?
+    axiosInstance.get('/questions.json')
+      .then(res => {
+        const docs = [];
+
+        for (const key in res.data) {
+          const enter = { id: key, question: res.data[key].question, answer: res.data[key].answer}
+          docs.push(enter);
+        }
+        this.setState({ loading: false, docs });
+        //set to redux store instead
+      })
+      .catch(err => {
+        this.setState({ loading: false });
+        console.warn(err)
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,12 +51,22 @@ class QandA extends Component {
       font-family: 'Mali', cursive;
       font-size: 2em;
       color: #272727;
+      padding: 0;
+    `
+    const qStyle = css`
+      border: 2px, solid, #C34271;
+      list-style: none;
+      padding-top:
     `
 
     const questionsAndAnswers = this.state.docs.map(doc => {
-      console.log('doc', doc, doc.id, doc.question)
       return (
-        <li key={doc.id}>{doc.question ? doc.question : null}</li>
+        <li
+          className={qStyle}
+          key={doc.id}
+        >
+          {doc.question ? doc.question : null}
+        </li>
       )
     });
 
@@ -94,7 +104,7 @@ const Form = () => {
     const data = { question: text, answer: '' }
     if (data.question.length > 0) {
       // Send the message to Firebase
-      // fire.database().ref('questions').push(data);
+      fire.database().ref('questions').push(data);
 
     }
     setText('');

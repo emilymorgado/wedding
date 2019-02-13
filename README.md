@@ -12,13 +12,13 @@ npm must be installed
 
 ## Running the Tests
 The following command will run all the tests
-(Tests are currently not running)
+(Tests are currently broken)
 ```
 npm test a
 ```
 
 ## Built with
-- [React](https://reactjs.org/docs/getting-started.html)] - User interfaces library
+- [React](https://reactjs.org/docs/getting-started.html) - User interfaces library
 - [React Router](https://reacttraining.com/react-router) - Navigational components library
 - [Emotion](https://emotion.sh/docs/introduction) - CSS-in-JS library
 - [Redux](https://redux.js.org/) - State container

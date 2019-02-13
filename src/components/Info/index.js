@@ -43,9 +43,9 @@ const Info = () => {
       </div>
       <div>
         <h4>What you can expect:</h4>
-        <p>You will witness the wedding ceremony between Emily Morgado and Alexei Samimi.
-        That will be followed by a Burning Man styled, 21+ party which will include dinner, drinks, dessert, music, dancing, and more.
-        Due to the number of guests coming, there will not be a sit-down dinner.</p>
+        <p>You will witness the wedding ceremony between Samantha and James.
+        That will be followed by a wild Burning-Man-styled, 21+ party which will include dinner, drinks, dessert, music, dancing, and more.
+        We can't wait to celebrate with all of your loved ones!</p>
       </div>
     </div>
   )

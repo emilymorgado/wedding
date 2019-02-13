@@ -18,7 +18,7 @@ const Gifts = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button text="Registry this way" type="bigButton" />
+          <Button text="Registry this way" type="extraBigButton" />
         </a>
       </div>
     </div>

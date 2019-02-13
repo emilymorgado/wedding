@@ -13,7 +13,7 @@ class QandA extends Component {
   }
 
   componentDidMount() {
-    //Now getting saved in action/reducer?
+    // Now getting saved in action/reducer?
     axiosInstance.get('/questions.json')
       .then(res => {
         const docs = [];
@@ -51,12 +51,22 @@ class QandA extends Component {
       font-family: 'Mali', cursive;
       font-size: 2em;
       color: #272727;
+      padding: 0;
+    `
+    const qStyle = css`
+      border: 2px, solid, #C34271;
+      list-style: none;
+      padding-top:
     `
 
     const questionsAndAnswers = this.state.docs.map(doc => {
-      console.log('doc', doc, doc.id, doc.question)
       return (
-        <li key={doc.id}>{doc.question ? doc.question : null}</li>
+        <li
+          className={qStyle}
+          key={doc.id}
+        >
+          {doc.question ? doc.question : null}
+        </li>
       )
     });
 
@@ -78,6 +88,17 @@ class QandA extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    action: state.action,
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ action }, dispatch);
+}
+
 export default QandA;
 
 

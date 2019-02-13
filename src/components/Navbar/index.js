@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Home from 'components/Home';
@@ -9,7 +8,7 @@ import Info from 'components/Info';
 import Gifts from 'components/Gifts';
 import QandA from 'components/QandA';
 import Accommodation from 'components/Accommodation';
-import Button from 'components/reusable/Button';
+
 
 const Navbar = () => {
 

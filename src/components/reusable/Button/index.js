@@ -1,4 +1,3 @@
-import React from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
@@ -24,6 +23,22 @@ const Button = props => {
         }
       `;
       break;
+      case 'extraBigButton':
+        base = css`
+          height: 400px;
+          width: 800px;
+          background-color: #12C988;
+          border: 4px solid #439F76;
+          border-radius: 10px;
+          font-size: 5em;
+          font-family: 'Pattaya', sans-serif;
+          @media (max-width: 736px) {
+            height: 200px;
+            width: 400px;
+            font-size: 1.6em;
+          }
+        `;
+        break;
     case 'signinBtn':
       base = css`
         height: 60px;

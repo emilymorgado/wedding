@@ -1,4 +1,4 @@
-# Personalized Wedding Site
+# Plan a Party
 
 ## Getting Started
 ```
